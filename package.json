@@ -1,0 +1,21 @@
+{
+  "name": "dollar_refresher",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "async": "^2.6.0",
+    "csvtojson": "^1.1.9",
+    "npm": "^5.7.1",
+    "recursive-readdir": "^2.2.2",
+    "underscore": "^1.8.3",
+    "xml-js": "^1.6.2",
+    "xml2js": "^0.4.19"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
