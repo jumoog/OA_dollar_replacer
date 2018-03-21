@@ -6,8 +6,10 @@ const options = {
   ignoreComment: true,
   alwaysChildren: true
 };
+// parse the xml data as js array into js
 let result = convert.xml2js(xml, options); // or convert.xml2json(xml, options)
 
+//
 async function processArray(json) {
   // loop through the csv json
   for (i = 0; i < json.length; i++) {
@@ -24,14 +26,18 @@ function rewrite(name, value) {
   result.elements[0].elements[1].elements.forEach(k => {
       if (k.attributes.Name === name) {
       k.elements[0].elements.forEach(l => {
+        // look for dollarParameters
         if (l.attributes.name === "dollarParameters") {
           l.elements.forEach(i => {
             i.elements.forEach(j => {
               if (j.elements && j.elements.length && stop === false) {
+                // if we found Dollar earlier we can write now the new value
                 if (found) {
                   j.elements[0].text = value;
+                  // success stop the loop
                   stop = true;
                 }
+                // look for Dollar and set found to true
                 if (j.attributes.name === "Dollar") {
                   found = true;
                 }
