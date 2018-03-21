@@ -21,9 +21,9 @@ recursive(process.argv[2], ["*.bak"], function(err, files) {
 
 function extractdollarParameters(file) {
   fs.readFile(file, (err, data) => {
-    if (err == null) {
+    if (err === null) {
       parser.parseString(data, (err, result) => {
-        if (err == null) {
+          if (err === null) {
           if (result !== null && result.panel.shapes && result.panel.shapes.length && result.panel.shapes[0].reference && result.panel.shapes[0].reference.length) {
             result.panel.shapes[0].reference.forEach(k => {
               if (k.properties[0] !== 'undefined') {
