@@ -38,7 +38,7 @@ function rewrite(name, value) {
                   stop = true;
                 }
                 // look for Dollar and set found to true
-                if (j.attributes.name === "Dollar") {
+                if (j.attributes.name === "Dollar" && j.elements[0].text === "$DP" ) {
                   found = true;
                 }
               }
