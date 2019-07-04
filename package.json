@@ -8,12 +8,16 @@
     "csvtojson": "^1.1.9",
     "recursive-readdir": "^2.2.2",
     "xml-js": "^1.6.2",
-    "xml2js": "^0.4.19"
+    "xml2js": "^0.4.19",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "author": "jumoog",
-  "license": "ISC"
+  "license": "ISC",
+  "snyk": true
 }
